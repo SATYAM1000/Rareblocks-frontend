@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { sidebarMenu, sidebarMenuDown } from "@/constants/menu.constant";
 import Link from "next/link";
+import { ChevronDown } from "lucide-react";
 
 export default function Sidebar() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -19,12 +20,15 @@ export default function Sidebar() {
       } md:translate-x-0`}
     >
       <div className="flex items-center justify-between p-4">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center w-full gap-4 p-2 rounded-md cursor-pointer hover:bg-gray-100">
           <Avatar className="relative w-6 h-6">
             <AvatarImage src="https://github.com/shadcn.png" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
-          <p className="text-sm">Satyam Kumar</p>
+          <div className="flex items-center gap-2">
+            <p className="text-sm text-nowrap text-ellipsis">Satyam Kumar</p>
+            <ChevronDown className="w-4 h-4" />
+          </div>
         </div>
         {/* ------ toggle button---------- */}
       </div>
